@@ -1,0 +1,84 @@
+import AppLayout from '@/components/layouts/AppLayout';
+ import { Box, Typography, useTheme } from '@mui/material';
+ import { motion } from 'framer-motion';
+ import CalendarView from '@/components/calendar/CalendarView';
+ 
+ export default function CalendarPage() {
+   const theme = useTheme();
+ 
+   return (
+     <AppLayout>
+       <Box sx={{ p: 4 }}>
+         <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.5 }}
+         >
+           <Typography
+             variant="h1"
+             sx={{
+               fontSize: '2rem',
+               fontWeight: 600,
+               letterSpacing: '-0.02em',
+               background: theme.palette.mode === 'dark'
+                 ? 'linear-gradient(90deg, #6366F1 0%, #8B5CF6 100%)'
+                 : 'linear-gradient(90deg, #4F46E5 0%, #7C3AED 100%)',
+               WebkitBackgroundClip: 'text',
+               WebkitTextFillColor: 'transparent',
+               mb: 1,
+             }}
+       <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+         <Box sx={{ p: 4, pb: 2 }}>
+           <motion.div
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.5 }}
+           >
+             Calendar
+           </Typography>
+           <Typography
+             variant="body1"
+             sx={{
+               color: theme.palette.text.secondary,
+               mb: 4,
+               letterSpacing: '-0.01em',
+             }}
+           >
+             Manage your schedule and meetings
+           </Typography>
+         </motion.div>
+             <Typography
+               variant="h1"
+               sx={{
+                 fontSize: '2rem',
+                 fontWeight: 600,
+                 letterSpacing: '-0.02em',
+                 background: theme.palette.mode === 'dark'
+                   ? 'linear-gradient(90deg, #6366F1 0%, #8B5CF6 100%)'
+                   : 'linear-gradient(90deg, #4F46E5 0%, #7C3AED 100%)',
+                 WebkitBackgroundClip: 'text',
+                 WebkitTextFillColor: 'transparent',
+                 mb: 1,
+               }}
+             >
+               Calendar
+             </Typography>
+             <Typography
+               variant="body1"
+               sx={{
+                 color: theme.palette.text.secondary,
+                 letterSpacing: '-0.01em',
+               }}
+             >
+               Manage your schedule and meetings with AI-powered assistance
+             </Typography>
+           </motion.div>
+         </Box>
+ 
+         {/* Calendar View */}
+         <Box sx={{ flex: 1, minHeight: 0 }}>
+           <CalendarView />
+         </Box>
+       </Box>
+     </AppLayout>
+   );
